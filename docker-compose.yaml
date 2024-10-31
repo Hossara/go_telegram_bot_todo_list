@@ -1,0 +1,18 @@
+services:
+  telegram_bot_db:
+    image: postgis/postgis:13-3.4
+    container_name: telegram_bot_db
+    volumes:
+      - telegram_bot_db:/var/lib/postgresql/data
+    networks:
+      - areal_network
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: porestgres
+      POSTGRES_PASSWORD: postgres
+    restart: always
+    env_file: .env
+
+volumes:
+  telegram_bot_db:
+    driver: local
