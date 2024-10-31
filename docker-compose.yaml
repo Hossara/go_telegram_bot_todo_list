@@ -4,14 +4,19 @@ services:
     container_name: telegram_bot_db
     volumes:
       - telegram_bot_db:/var/lib/postgresql/data
-    networks:
-      - areal_network
-    environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: porestgres
-      POSTGRES_PASSWORD: postgres
     restart: always
+    network_mode: host
     env_file: .env
+
+#  telegram_bot:
+#    build: .
+#    network_mode: host
+#    dns:
+#      - 185.51.200.2
+#      - 178.22.122.100
+#    env_file: .env
+#    depends_on:
+#      - telegram_bot_db
 
 volumes:
   telegram_bot_db:
