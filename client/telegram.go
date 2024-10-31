@@ -8,11 +8,12 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"telegram_todo_bot/config"
 )
 
 func Init() *tgbotapi.BotAPI {
 	// Set up SOCKS5 proxy
-	if os.Getenv("PROXY") != "" {
+	if config.Config("PROXY") != "" {
 		// Create socks 5 connection
 		dialer, err := proxy.SOCKS5("tcp", os.Getenv("PROXY"), &proxy.Auth{
 			User:     "",

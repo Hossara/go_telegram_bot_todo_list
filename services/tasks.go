@@ -1,7 +1,6 @@
 package services
 
 import (
-	"fmt"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 	"telegram_todo_bot/keyboards"
 	"telegram_todo_bot/repositories"
@@ -70,7 +69,6 @@ func DeleteTask(bot *tgbotapi.BotAPI, update tgbotapi.Update) {
 		}
 	}
 
-	fmt.Println(len(rows))
 	var keyboard = tgbotapi.InlineKeyboardMarkup{InlineKeyboard: rows}
 	//keyboard.InlineKeyboard = rows
 

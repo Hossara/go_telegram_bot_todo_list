@@ -2,9 +2,8 @@ package config
 
 import (
 	"fmt"
-	"os"
-
 	"github.com/joho/godotenv"
+	"os"
 )
 
 func Config(key string) string {

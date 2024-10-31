@@ -33,9 +33,9 @@ func Init() *gorm.DB {
 	//}
 
 	// Create database
-	if err := DB.Exec("CREATE DATABASE IF NOT EXISTS todolist").Error; err != nil {
-		panic(err)
-	}
+	/*if err := DB.Exec("CREATE DATABASE todolist").Error; err != nil {
+		log.Fatalf("error executing query %v", err)
+	}*/
 
 	// Migrate tables
 	DB.AutoMigrate(&models.Task{})
